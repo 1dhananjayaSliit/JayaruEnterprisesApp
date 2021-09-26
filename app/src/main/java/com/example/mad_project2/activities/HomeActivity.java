@@ -1,0 +1,44 @@
+package com.example.mad_project2.activities;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.example.mad_project2.MainActivity;
+import com.example.mad_project2.R;
+
+public class HomeActivity extends AppCompatActivity {
+
+    ProgressBar progressBar;
+    FirebaseAuth auth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
+        auth = FirebaseAuth.getInstance();
+
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
+
+        if (auth.getCurretUser() != null ) {
+            progressBar.setVisibility(View.VISIBLE);
+            startActivities(Intent(HomeActivity.this, MainActivity.class));
+            Toast.makeText(this,"Please wait you are already logged in", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+    }
+
+    public void login(View view) {
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
+    }
+
+    public void registration(View view) {
+        startActivity(new Intent(WelcomeActivity.this, RegistrationActivity.class));
+    }
+}
