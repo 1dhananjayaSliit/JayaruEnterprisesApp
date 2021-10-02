@@ -1,2 +1,4 @@
-package com.example.mad_project2;public class CartViewHolder {
+package com.example.mad_project2;
+
+public class CartViewHolder {
 }

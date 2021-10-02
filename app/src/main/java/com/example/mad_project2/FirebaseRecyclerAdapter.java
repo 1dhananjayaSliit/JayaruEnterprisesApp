@@ -1,2 +1,4 @@
-package com.example.mad_project2;public class FirebaseRecyclerAdapter {
+package com.example.mad_project2;
+
+public class FirebaseRecyclerAdapter<T, T1> {
 }

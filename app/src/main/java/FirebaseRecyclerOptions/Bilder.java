@@ -1,2 +1,4 @@
-package FirebaseRecyclerOptions;public class Bilder {
+package FirebaseRecyclerOptions;
+
+public class Bilder<T> {
 }
